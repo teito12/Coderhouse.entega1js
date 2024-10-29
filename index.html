@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
-    <title>Proyecto1</title>
+    <link href="output.css" rel="stylesheet"></link>
+    <link href="styles.css" rel="stylesheet"></link>
+    <title>YAMAHA</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script defer src="main.js"></script>
 </head>
-<body>
-    
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+    <!-- Encabezado -->
+    <header class="w-full max-w-4xl bg-white shadow-md rounded-lg p-6 mb-8">
+        <div class="flex items-center">
+            <img src="./img/Yamaha-Logo1-500x281.webp" alt="Logo" class="w-16 h-26 mr-4 rounded-full">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">Financia tu Yamaha 0km</h1>
+                <p class="text-gray-600">Animate a tu primera Yamaha!</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catálogo de productos -->
+    <main class="w-full max-w-4xl bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Unidades Disponibles</h2>
+        <div id="productCatalog" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!--productos se generarán  aca JavaScript -->
+        </div>
+    </main>
+
+    <!-- Carrito de compras -->
+    <section id="cartSection" class="w-full max-w-4xl bg-white shadow-md rounded-lg p-6 mt-8">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Carrito de Compras</h2>
+        <div id="cartList" class="space-y-3 bg-gray-50 p-4 rounded-lg shadow-inner">
+        </div>
+        <!-- Modal  confirmación de compra -->
+<div id="confirmationModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Confirmación de Compra</h2>
+        <div id="modalProductList" class="space-y-2 mb-4">
+        </div>
+
+        <!-- Formulario para ingresar dirección de envío -->
+        <label for="address" class="block text-gray-600 mb-2">Dirección de Envío:</label>
+        <input type="text" id="address" class="w-full p-2 border rounded-md mb-4" placeholder="Ingrese su dirección">
+
+        <div class="flex justify-end space-x-4">
+            <button id="closeModal" class="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500">Cancelar</button>
+            <button id="confirmPurchase" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Confirmar Compra</button>
+        </div>
+    </div>
+</div>
+        <p id="totalAmount" class="text-xl font-semibold text-gray-800 mt-4">Total: $0</p>
+        <button id="clearCart" class="w-full bg-red-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-red-600 mt-4">
+            Finalizar Compra
+        </button>
+    </section>
+
+
 </body>
 </html>
